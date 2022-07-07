@@ -4,7 +4,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
-//import toysRouter from './routes/toys.js';
+import toysRouter from './routes/toys.js';
 import usersRouter from './routes/users.js';
 
 const app = express();
@@ -17,7 +17,7 @@ app.use(cors());
 app.get('/', (req, res) => {
     res.send('THIS IS THE TOY MANAGEMENT API WEBPAGE');
 });
-//app.use('/toys', toysRouter);
+app.use('/toys', toysRouter);
 app.use('/user', usersRouter);
 
 
